@@ -18,11 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #007bff;
-            /* Biru cerah sebagai aksen */
             --secondary-color: #6c757d;
             --background-light: #ffffff;
             --background-soft: #f8f9fa;
@@ -40,7 +38,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Custom Cursor --- */
         .custom-cursor {
             position: fixed;
             width: 20px;
@@ -62,11 +59,9 @@
         @media (max-width: 768px) {
             .custom-cursor {
                 display: none;
-                /* Sembunyikan kursor kustom di mobile */
             }
         }
 
-        /* --- Scroll Progress Bar --- */
         #scroll-progress-bar {
             position: fixed;
             top: 0;
@@ -79,29 +74,20 @@
             transition: width 0.1s ease-out;
         }
 
-        /* --- Perbaikan untuk Gambar Profil --- */
         .profile-image {
             aspect-ratio: 1 / 1;
-            /* Membuat wadah gambar menjadi persegi */
             width: 100%;
-            /* Lebar mengisi kontainer kolomnya */
             object-fit: cover;
-            /* Penting: Memotong gambar agar pas tanpa distorsi */
             border-radius: 50%;
-            /* Membuatnya menjadi lingkaran */
         }
 
-        /* --- Link Portofolio --- */
         a.portfolio-link,
         a.portfolio-link:hover {
             text-decoration: none;
-            /* Menghapus garis bawah */
             color: inherit;
-            /* Menggunakan warna teks dari parent-nya */
         }
 
 
-        /* --- Navbar --- */
         .navbar {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
@@ -141,7 +127,6 @@
             color: var(--text-dark) !important;
         }
 
-        /* --- Hero Section --- */
         #beranda {
             background-color: var(--background-soft);
             min-height: 100vh;
@@ -181,7 +166,6 @@
             }
         }
 
-        /* --- Section Styling --- */
         section {
             padding: 100px 0;
         }
@@ -194,7 +178,6 @@
             position: relative;
         }
 
-        /* --- Riwayat Section (Pendidikan & Pengalaman) --- */
         .riwayat-title {
             font-size: 1.8rem;
             font-weight: 600;
@@ -269,7 +252,6 @@
         }
 
 
-        /* --- Portfolio Section --- */
         #portfolio-filter button {
             background-color: transparent;
             border: 1px solid #ddd;
@@ -317,14 +299,12 @@
             opacity: 1;
         }
 
-        /* --- Skills Section --- */
         .progress {
             height: 10px;
             border-radius: 5px;
             background-color: #e9ecef;
         }
 
-        /* --- Animation on Scroll --- */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -336,7 +316,6 @@
             transform: translateY(0);
         }
 
-        /* --- Footer --- */
         footer {
             background-color: var(--background-soft);
         }
@@ -351,7 +330,6 @@
             color: var(--primary-color);
         }
 
-        /* Responsive Adjustments */
         @media (min-width: 992px) {
             #beranda h1 {
                 font-size: 3.5rem;
@@ -373,7 +351,6 @@
     <div class="custom-cursor"></div>
     <div id="scroll-progress-bar"></div>
 
-    <!-- Navbar -->
     <nav id="navbar-portfolio" class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Amanda Sugihanto</a>
@@ -393,7 +370,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="beranda">
         <div class="container">
             <div class="row align-items-center">
@@ -413,7 +389,6 @@
         </div>
     </section>
 
-    <!-- Tentang Saya Section -->
     <section id="tentang" class="bg-white">
         <div class="container">
             <h2 class="section-title reveal">Tentang & Keahlian</h2>
@@ -466,7 +441,6 @@
         </div>
     </section>
 
-    <!-- Riwayat Section (Pendidikan & Pengalaman) -->
     <section id="riwayat" class="bg-light">
         <div class="container">
             <h2 class="section-title reveal">Riwayat Saya</h2>
@@ -488,7 +462,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Kolom Pengalaman -->
                 <div class="col-lg-6">
                     <div class="reveal">
                         <h3 class="riwayat-title">Pengalaman Kerja</h3>
@@ -518,7 +491,6 @@
     </section>
 
 
-    <!-- Portofolio Section -->
     <section id="portofolio" class="bg-white">
         <div class="container">
             <h2 class="section-title reveal">Portofolio</h2>
@@ -554,12 +526,10 @@
                         </div>
                     </a>
                 </div>
-                <!-- Tambahkan proyek lain di sini dengan data-category yang sesuai -->
             </div>
         </div>
     </section>
 
-    <!-- Kontak Section -->
     <section id="kontak" class="bg-light">
         <div class="container">
             <h2 class="section-title reveal">Hubungi Saya</h2>
@@ -591,7 +561,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-4">
         <div class="container text-center">
             <div class="social-icons mb-3">
@@ -606,14 +575,12 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS for Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // --- Kursor Kustom ---
             const cursor = document.querySelector('.custom-cursor');
             if (cursor) {
                 window.addEventListener('mousemove', e => {
@@ -625,8 +592,6 @@
                     el.addEventListener('mouseout', () => cursor.classList.remove('hover'));
                 });
             }
-
-            // --- Progress Bar Scroll ---
             const progressBar = document.getElementById('scroll-progress-bar');
             if (progressBar) {
                 window.addEventListener('scroll', () => {
@@ -637,7 +602,7 @@
                 });
             }
 
-            // --- Efek Typewriter ---
+    
             const typewriterElement = document.getElementById('typewriter');
             if (typewriterElement) {
                 const text = typewriterElement.childNodes[0].nodeValue;
@@ -654,7 +619,7 @@
                 typeWriter();
             }
 
-            // --- Filter Portofolio ---
+           
             const filterContainer = document.querySelector('#portfolio-filter');
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             if (filterContainer) {
@@ -684,7 +649,6 @@
                 });
             }
 
-            // --- Animasi saat Scroll (Intersection Observer) ---
             const revealElements = document.querySelectorAll('.reveal');
             const skillsProgress = document.querySelectorAll('.progress-bar');
 
@@ -705,7 +669,7 @@
             revealElements.forEach(el => observer.observe(el));
             skillsProgress.forEach(el => observer.observe(el));
 
-            // --- Navbar collapse on click (untuk mobile) ---
+          
             const navLinks = document.querySelectorAll('.nav-link');
             const menuToggle = document.getElementById('navbarNav');
             const bsCollapse = new bootstrap.Collapse(menuToggle, {
@@ -719,7 +683,7 @@
                 });
             });
 
-            // --- AJAX Contact Form Submission ---
+     
             const contactForm = document.getElementById('contact-form');
             const formStatus = document.getElementById('form-status');
 
